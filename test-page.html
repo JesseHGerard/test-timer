@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="./public/reset.css" type="text/css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:300|Mukta+Malar:300,500" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=.75">
+  <style>
+
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      font-family: 'Merriweather', serif;
+      font-weight: 300;
+      font-size: 1rem;
+    }
+
+    :root {
+      --color-accent-one: magenta;
+      --color-accent-two: cyan;
+    }
+
+    .page {
+      height: 101vh;
+      width: 101vw;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+
+    #test {
+      background-color: black;
+    }
+
+    .flex-center {
+      max-width: 100vw;
+      max-height: 100vh;
+      width: intrinsic;
+      width: -moz-max-content;
+      width: -webkit-max-content;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+
+    .flex-container {
+      max-width: 100vw;
+      max-height: 100vh;
+      width: max-content;
+      width: -moz-max-content;
+      width: -webkit-max-content;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+
+    .flex-container.no-wrap {
+      flex-wrap: nowrap;
+    }
+
+    .flex-container.row {
+      flex-direction: row;
+    }
+
+    .number-box {
+      min-width: 15rem;
+      min-height: 15rem;
+      padding: 1rem;
+      border-width: 2px;
+      border-style: solid;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      margin: 2rem;
+    }
+
+    .number-box.magenta {
+      border-color: var(--color-accent-one);
+    }
+
+    .number-box.cyan {
+      border-color: var(--color-accent-two);
+    }
+
+    .bold-number {
+      display: inline-block;
+      font-family: 'Mukta Malar', sans-serif;
+      font-weight: 500;
+      font-size: 12rem;
+      line-height: 0;
+    }
+
+    .white {
+      color: white;
+    }
+
+    .no-select {
+      cursor: default;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    p {
+      font-size: 2rem;
+      cursor: default;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    p.magenta {
+      color: var(--color-accent-one);
+    }
+    p.cyan {
+      color: var(--color-accent-two);
+    }
+
+    input {
+      text-align: center;
+      width: 15rem;
+      height: 15rem;
+      padding: 0;
+      border: none;
+      outline: none;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    input.magenta {
+      caret-color: var(--color-accent-one);
+    }
+
+    input.magenta::selection {
+      background: var(--color-accent-one);
+    }
+
+    input.cyan {
+      caret-color: var(--color-accent-two);
+    }
+
+    input.cyan::selection {
+      background: var(--color-accent-two);
+    }
+
+    img.button-timer {
+      cursor: pointer;
+      height: 5rem;
+      width: 5rem;
+      margin: 2rem 1rem 1rem 1rem;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="test" class="page"></div>
+  <div class="flex-center white">
+
+    <div class="flex-container no-wrap">
+
+      <div class="flex-container">
+        <p>progress</p>
+      </div>
+
+      <div class="flex-container">
+        <div class="flex-container">
+          <div class="number-box magenta">
+            <h2 class="bold-number magenta no-select">50</h2>
+          </div>
+          <p class="magenta">questions</p>
+        </div>
+        <div class="flex-container">
+          <div class="number-box cyan">
+            <h2 class="bold-number cyan no-select">15</h2>
+          </div>
+          <p class="cyan">minutes</p>
+        </div>
+      </div>
+<!-- set page
+      <div class="flex-container">
+
+        <div class="flex-container">
+          <div class="number-box magenta">
+            <input type="number" class="bold-number magenta" value="50"></input>
+          </div>
+          <p class="magenta">questions</p>
+        </div>
+
+        <div class="flex-container">
+          <div class="number-box cyan">
+            <input type="number" class="bold-number cyan" value="15"></input>
+          </div>
+          <p class="cyan">minutes</p>
+        </div>
+
+      </div>
+-->
+
+    </div>
+
+    <div class="flex-container row">
+      <img src="./public/images/pause.svg" class="button-timer"/>
+    </div>
+
+  </div>
+
+</body>
+</html>
