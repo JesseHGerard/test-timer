@@ -19,7 +19,7 @@ class TestPage extends Component {
       runningState.backgroundColor = 'rgb(80, 85, 91)';
       runningState.title = 'paused';
     } else if (!props.running && props.timeRemaining <= 0) {
-      runningState.backgroundColor = 'rgb(78, 64, 79)';
+      runningState.backgroundColor = 'rgb(109, 5, 5)';
       runningState.title = 'complete';
     } else {
       runningState.backgroundColor = 'black';

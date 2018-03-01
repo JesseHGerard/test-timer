@@ -155,3 +155,24 @@ export const saveLocalComplete = () => {
     type: 'SAVE_LOCAL_COMPLETE'
   }
 }
+
+
+export const removeIntroPage = () => {
+  return {
+    type: 'REMOVE_INTRO_PAGE'
+  }
+}
+
+
+export const startCountDown = () => {
+  return {
+    type: 'START_COUNTDOWN'
+  }
+}
+
+
+export const removeStartPage = () => {
+  return {
+    type: 'REMOVE_START_PAGE'
+  }
+}

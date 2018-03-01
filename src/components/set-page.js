@@ -20,8 +20,18 @@ class SetPage extends Component {
 
   handleStartClick = () => {
     this.props.dispatch(
-      actions.startButton(this.props.timeLimit, this.props.totalQuestions)
+      actions.startCountDown()
     );
+    setTimeout( () => {
+      this.props.dispatch(
+        actions.startButton(this.props.timeLimit, this.props.totalQuestions)
+      );
+      setTimeout( () => {
+        this.props.dispatch(
+          actions.removeStartPage()
+        );
+      }, 800);
+    }, 4000);
   }
 
   render() {

@@ -11,7 +11,7 @@ const initialState = {
   questionCount: 0, // number, counts up to total
   running: true, // bool, timer is running
   ended: false, // bool, timer has ended
-  introPage: false, // bool, show
+  introPage: true, // bool, show
   startPage: false, // bool, show
   testPage: false, // bool, show
   saveLocal: false, // bool
@@ -78,6 +78,7 @@ const reducer = (state = initialState, action) => {
         ...state,
         ...payload,
         introPage: true,
+        startPage: false,
         saveLocal: false
       }
 
@@ -85,6 +86,24 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         saveLocal: false
+      }
+
+    case 'REMOVE_INTRO_PAGE':
+      return {
+        ...state,
+        introPage: false
+      }
+
+    case 'START_COUNTDOWN':
+      return {
+        ...state,
+        startPage: true
+      }
+
+    case 'REMOVE_START_PAGE':
+      return {
+        ...state,
+        startPage: false
       }
 
     default:
