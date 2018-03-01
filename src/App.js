@@ -10,17 +10,13 @@ import StartPage from './components/start-page';
 
 class App extends Component {
 
-  startCountDown = () => {
-    return <StartPage />;
-  }
-
   render() {
     const props = this.props;
     console.log(props.startPage);
     return (
       <div>
         <SetPage />
-        { props.startPage ? this.startCountDown() : null }
+        { props.startPage ? <StartPage /> : null }
         <ReactCSSTransitionGroup
           transitionName="in-left"
           transitionEnterTimeout={ 500 }
